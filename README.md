@@ -4,15 +4,6 @@
 
 ### A Production-Grade Dynamo-Style Storage System
 
-[![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Architecture](https://img.shields.io/badge/Architecture-Distributed-blue?style=for-the-badge)]()
-[![CAP](https://img.shields.io/badge/CAP-AP_(Available+Partition_Tolerant)-orange?style=for-the-badge)]()
-
-*A high-performance, fault-tolerant distributed key-value storage system inspired by Amazon's Dynamo whitepaper*
-
-[Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [API](#-api-reference) • [Configuration](#%EF%B8%8F-configuration) • [Testing](#-testing)
-
 </div>
 
 ---
