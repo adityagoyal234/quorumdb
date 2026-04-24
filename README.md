@@ -78,81 +78,6 @@ This project serves as an excellent learning resource for understanding:
 | **Graceful Shutdown** | Clean shutdown with data persistence |
 | **Configurable** | CLI flags, config files, or environment variables |
 
-
-
-## 🚀 Quick Start
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/adityagoyal234/quorumdb.git
-cd quorumdb
-
-# Install dependencies
-go mod download
-
-# Build the binary
-make build
-
-# Verify installation
-./bin/quorumdb --version
-```
-
-### Run Single Node (Development)
-
-```bash
-./bin/quorumdb \
-  --node-id=node1 \
-  --port=8001 \
-  --data-dir=./data/node1
-```
-
-### Run 3-Node Cluster (Production-like)
-
-**Terminal 1:**
-```bash
-./bin/quorumdb --node-id=node1 --port=8001 --gossip-port=7001 --data-dir=./data/node1
-```
-
-**Terminal 2:**
-```bash
-./bin/quorumdb --node-id=node2 --port=8002 --gossip-port=7002 --data-dir=./data/node2 \
-  --seeds=127.0.0.1:7001
-```
-
-**Terminal 3:**
-```bash
-./bin/quorumdb --node-id=node3 --port=8003 --gossip-port=7003 --data-dir=./data/node3 \
-  --seeds=127.0.0.1:7001,127.0.0.1:7002
-```
-
-**Or use the convenience script:**
-```bash
-make cluster      # Starts 3 nodes
-make stop-cluster # Stops all nodes
-```
-
-### Basic Operations
-
-```bash
-# Store a value
-curl -X PUT http://localhost:8001/kv/user:1001 \
-  -H "Content-Type: application/json" \
-  -d '{"value": "{\"name\": \"John\", \"email\": \"john@example.com\"}"}'
-
-# Retrieve a value
-curl http://localhost:8001/kv/user:1001
-
-# Delete a value
-curl -X DELETE http://localhost:8001/kv/user:1001
-
-# Check cluster status
-curl http://localhost:8001/admin/status | jq
-```
-
----
-
 ## 🏗 Architecture
 
 ### High-Level System Design
@@ -510,26 +435,6 @@ curl http://localhost:8001/kv/key50
 
 ---
 
-## 📊 Benchmarks
-
-### Test Environment
-- **Hardware:** MacBook Pro M1, 16GB RAM
-- **Cluster:** 3 local nodes
-- **Data:** Random 1KB values
-
-### Results
-
-| Metric | Single Node | 3-Node Cluster |
-|--------|-------------|----------------|
-| **Write Throughput** | 15,000 ops/sec | 5,000 ops/sec |
-| **Read Throughput** | 45,000 ops/sec | 12,000 ops/sec |
-| **P50 Latency** | 0.5ms | 2ms |
-| **P99 Latency** | 3ms | 15ms |
-| **P99.9 Latency** | 8ms | 35ms |
-
-> Note: Cluster throughput is lower due to quorum requirements and network round-trips.
-
----
 
 ## 📁 Project Structure
 
