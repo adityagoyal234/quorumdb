@@ -27,20 +27,12 @@
 
 ## 🎯 Overview
 
-**QuorumDB** is a distributed key-value store that implements the core principles from Amazon's groundbreaking [Dynamo paper](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf). It's designed for scenarios requiring:
+**QuorumDB** is a distributed key-value store designed for scenarios requiring:
 
 - **High Availability** - The system remains operational even when nodes fail
 - **Horizontal Scalability** - Add more nodes to handle increased load
 - **Low Latency** - Optimized for fast reads and writes
 - **Eventual Consistency** - With tunable consistency levels for flexibility
-
-### 🎓 Educational Value
-
-This project serves as an excellent learning resource for understanding:
-- Distributed systems concepts
-- Consensus and replication strategies
-- Failure detection mechanisms
-- Storage engine design
 
 ---
 
